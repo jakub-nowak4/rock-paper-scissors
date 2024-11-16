@@ -57,4 +57,4 @@ function playGame(rounds) {
   }
 }
 
-playGame(5);
+// playGame(5);
