@@ -16,11 +16,11 @@
     <script src="./script.js" defer></script>
   </head>
   <body
-    class="bg-gray-900 flex flex-col items-center min-h-screen text-white font-sans"
+    class="bg-gray-900 flex flex-col items-center min-h-screen text-white font-sans relative"
   >
     <div
       id="container"
-      class="mt-40 text-center flex flex-col gap-10 items-center"
+      class="mt-40 text-center flex flex-col gap-10 items-center z-0"
     >
       <h1 class="text-4xl text-purple-500 font-semibold">
         Rock Paper Scissors
@@ -62,6 +62,35 @@
       <button class="hidden block bg-purple-600 text-2xl py-2 px-6 rounded-md">
         Reset Game
       </button>
+    </div>
+
+    <!-- Welcome modal -->
+    <div
+      class="hidden modal-container absolute inset-0 z-10 bg-gray-900 bg-opacity-95 flex justify-center items-start"
+    >
+      <div
+        class="modal mt-40 bg-purple-600 p-5 rounded-md relative"
+        id="welcome"
+      >
+        <h1 class="text-teal-200 text-2xl mb-4">Welcome!</h1>
+        <p class="text-white text-lg mb-4">
+          Here are the rules for Rock Paper Scissors:
+        </p>
+        <ul class="text-white text-lg list-disc list-inside mb-4">
+          <li>Rock beats Scissors</li>
+          <li>Scissors beats Paper</li>
+          <li>Paper beats Rock</li>
+        </ul>
+        <p class="text-white text-lg">
+          The player who first scores 5 points wins the game. Good luck!
+        </p>
+
+        <button
+          class="absolute top-4 right-4 border-none font-bold text-teal-200"
+        >
+          <i class="fas fa-times text-3xl"></i>
+        </button>
+      </div>
     </div>
   </body>
 </html>
