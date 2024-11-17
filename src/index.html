@@ -92,5 +92,76 @@
         </button>
       </div>
     </div>
+
+    <!-- Select Player's Value -->
+    <div
+      class="modal-container absolute inset-0 bg-gray-900 bg-opacity-90 flex justify-center items-start"
+    >
+      <div
+        class="modal mt-48 text-center bg-purple-400 bg-opacity-55 py-6 px-8 rounded-lg"
+        id="player-select"
+      >
+        <h3 class="text-3xl mb-8">Choose your option:</h3>
+        <form action="" id="player-select-form" class="f">
+          <div class="flex gap-10 justify-center items-center">
+            <div class="bg-purple-600 p-3 rounded-md input-checked-parent">
+              <input
+                type="radio"
+                name="player-game-option"
+                id="rock"
+                class="hidden"
+              />
+              <label for="rock" class="hover:cursor-pointer">
+                <div
+                  class="w-[200px] h-[200px] bg-white rounded-md mb-2 flex items-center justify-center"
+                >
+                  <i class="fas fa-hand-rock text-purple-600 text-8xl"></i>
+                </div>
+                <p class="uppercase text-2xl">Rock</p>
+              </label>
+            </div>
+
+            <div class="bg-purple-600 p-3 rounded-md input-checked-parent">
+              <input
+                type="radio"
+                name="player-game-option"
+                id="paper"
+                class="hidden"
+              />
+              <label for="paper" class="hover:cursor-pointer">
+                <div
+                  class="w-[200px] h-[200px] bg-white rounded-md mb-2 flex items-center justify-center"
+                >
+                  <i class="fas fa-hand-paper text-purple-600 text-8xl"></i>
+                </div>
+                <p class="uppercase text-2xl">Paper</p>
+              </label>
+            </div>
+
+            <div class="bg-purple-600 p-3 rounded-md input-checked-parent">
+              <input
+                type="radio"
+                name="player-game-option"
+                id="scissors"
+                class="hidden"
+              />
+              <label for="scissors" class="hover:cursor-pointer">
+                <div
+                  class="w-[200px] h-[200px] bg-white rounded-md mb-2 flex items-center justify-center"
+                >
+                  <i class="fas fa-hand-scissors text-purple-600 text-8xl"></i>
+                </div>
+                <p class="uppercase text-2xl">Scissors</p>
+              </label>
+            </div>
+          </div>
+          <button
+            class="my-8 font-semibold rounded-lg text-xl bg-purple-600 py-2 px-8"
+          >
+            Select
+          </button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
