@@ -26,6 +26,7 @@
         Rock Paper Scissors
       </h1>
 
+      <h3 id="currentRound" class="text-2xl"></h3>
       <div id="game-field" class="flex gap-10">
         <div
           class="game-box bg-purple-600 w-[350px] h-[350px] rounded-md p-5 flex flex-col gap-5"
@@ -60,14 +61,6 @@
       >
         Start Game
       </button>
-
-      <!-- Change display value with JS -->
-      <button
-        class="hidden block bg-purple-600 text-2xl py-2 px-6 rounded-md"
-        id="reset-game"
-      >
-        Reset Game
-      </button>
     </div>
 
     <!-- Welcome modal -->
@@ -94,6 +87,25 @@
           id="modal-welcome-close"
         >
           <i class="fas fa-times text-3xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Result modal -->
+    <div
+      class="hidden modal-container absolute inset-0 z-10 bg-gray-900 bg-opacity-95 flex justify-center items-start"
+      id="result"
+    >
+      <div
+        class="modal mt-40 bg-purple-600 p-5 rounded-md w-[450px] text-center py-5"
+      >
+        <h1 class="text-teal-200 text-2xl mb-4">Congratulations!</h1>
+        <h3 class="text-white text-lg my-8">MSG</h3>
+        <button
+          class="bg-teal-200 text-2xl py-2 px-6 rounded-md"
+          id="reset-game"
+        >
+          Reset Game
         </button>
       </div>
     </div>
