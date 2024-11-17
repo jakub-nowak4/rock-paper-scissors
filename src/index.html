@@ -54,24 +54,28 @@
         </div>
       </div>
 
-      <button class="block bg-purple-600 text-2xl py-2 px-6 rounded-md">
+      <button
+        class="block bg-purple-600 text-2xl py-2 px-6 rounded-md"
+        id="start-game"
+      >
         Start Game
       </button>
 
       <!-- Change display value with JS -->
-      <button class="hidden block bg-purple-600 text-2xl py-2 px-6 rounded-md">
+      <button
+        class="hidden block bg-purple-600 text-2xl py-2 px-6 rounded-md"
+        id="reset-game"
+      >
         Reset Game
       </button>
     </div>
 
     <!-- Welcome modal -->
     <div
-      class="hidden modal-container absolute inset-0 z-10 bg-gray-900 bg-opacity-95 flex justify-center items-start"
+      class="modal-container absolute inset-0 z-10 bg-gray-900 bg-opacity-95 flex justify-center items-start"
+      id="welcome"
     >
-      <div
-        class="modal mt-40 bg-purple-600 p-5 rounded-md relative"
-        id="welcome"
-      >
+      <div class="modal mt-40 bg-purple-600 p-5 rounded-md relative">
         <h1 class="text-teal-200 text-2xl mb-4">Welcome!</h1>
         <p class="text-white text-lg mb-4">
           Here are the rules for Rock Paper Scissors:
@@ -87,6 +91,7 @@
 
         <button
           class="absolute top-4 right-4 border-none font-bold text-teal-200"
+          id="modal-welcome-close"
         >
           <i class="fas fa-times text-3xl"></i>
         </button>
@@ -95,11 +100,11 @@
 
     <!-- Select Player's Value -->
     <div
-      class="modal-container absolute inset-0 bg-gray-900 bg-opacity-90 flex justify-center items-start"
+      class="hidden modal-container absolute inset-0 bg-gray-900 bg-opacity-90 flex justify-center items-start"
+      id="player-select"
     >
       <div
         class="modal mt-48 text-center bg-purple-400 bg-opacity-55 py-6 px-8 rounded-lg"
-        id="player-select"
       >
         <h3 class="text-3xl mb-8">Choose your option:</h3>
         <form action="" id="player-select-form" class="f">
@@ -109,6 +114,7 @@
                 type="radio"
                 name="player-game-option"
                 id="rock"
+                value="rock"
                 class="hidden"
               />
               <label for="rock" class="hover:cursor-pointer">
@@ -126,6 +132,7 @@
                 type="radio"
                 name="player-game-option"
                 id="paper"
+                value="paper"
                 class="hidden"
               />
               <label for="paper" class="hover:cursor-pointer">
@@ -143,6 +150,7 @@
                 type="radio"
                 name="player-game-option"
                 id="scissors"
+                value="scissors"
                 class="hidden"
               />
               <label for="scissors" class="hover:cursor-pointer">
