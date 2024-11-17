@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors Game</title>
+
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="./script.js" defer></script>
+  </head>
+  <body
+    class="bg-gray-900 flex flex-col items-center min-h-screen text-white font-sans relative"
+  >
+    <div
+      id="container"
+      class="mt-40 text-center flex flex-col gap-10 items-center z-0"
+    >
+      <h1 class="text-4xl text-purple-500 font-semibold">
+        Rock Paper Scissors
+      </h1>
+
+      <div id="game-field" class="flex gap-10">
+        <div
+          class="game-box bg-purple-600 w-[350px] h-[350px] rounded-md p-5 flex flex-col gap-5"
+          id="player"
+        >
+          <h3 class="text-2xl">Score: <span class="score">0</span></h3>
+          <div
+            class="game-option flex-1 bg-white rounded-lg flex items-center justify-center"
+          >
+            <i class="fas fa-hand-paper text-purple-600 text-8xl"></i>
+          </div>
+          <p class="text-xl">PLAYER</p>
+        </div>
+
+        <div
+          class="game-box bg-purple-600 w-[350px] h-[350px] rounded-md p-5 flex flex-col gap-5"
+          id="computer"
+        >
+          <h3 class="text-2xl">Score: <span class="score">0</span></h3>
+          <div
+            class="game-option flex-1 bg-white rounded-lg flex items-center justify-center"
+          >
+            <i class="fas fa-hand-rock text-purple-600 text-8xl"></i>
+          </div>
+          <p class="text-xl">COMPUTER</p>
+        </div>
+      </div>
+
+      <button class="block bg-purple-600 text-2xl py-2 px-6 rounded-md">
+        Start Game
+      </button>
+
+      <!-- Change display value with JS -->
+      <button class="hidden block bg-purple-600 text-2xl py-2 px-6 rounded-md">
+        Reset Game
+      </button>
+    </div>
+
+    <!-- Welcome modal -->
+    <div
+      class="hidden modal-container absolute inset-0 z-10 bg-gray-900 bg-opacity-95 flex justify-center items-start"
+    >
+      <div
+        class="modal mt-40 bg-purple-600 p-5 rounded-md relative"
+        id="welcome"
+      >
+        <h1 class="text-teal-200 text-2xl mb-4">Welcome!</h1>
+        <p class="text-white text-lg mb-4">
+          Here are the rules for Rock Paper Scissors:
+        </p>
+        <ul class="text-white text-lg list-disc list-inside mb-4">
+          <li>Rock beats Scissors</li>
+          <li>Scissors beats Paper</li>
+          <li>Paper beats Rock</li>
+        </ul>
+        <p class="text-white text-lg">
+          The player who first scores 5 points wins the game. Good luck!
+        </p>
+
+        <button
+          class="absolute top-4 right-4 border-none font-bold text-teal-200"
+        >
+          <i class="fas fa-times text-3xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Select Player's Value -->
+    <div
+      class="modal-container absolute inset-0 bg-gray-900 bg-opacity-90 flex justify-center items-start"
+    >
+      <div
+        class="modal mt-48 text-center bg-purple-400 bg-opacity-55 py-6 px-8 rounded-lg"
+        id="player-select"
+      >
+        <h3 class="text-3xl mb-8">Choose your option:</h3>
+        <form action="" id="player-select-form" class="f">
+          <div class="flex gap-10 justify-center items-center">
+            <div class="bg-purple-600 p-3 rounded-md input-checked-parent">
+              <input
+                type="radio"
+                name="player-game-option"
+                id="rock"
+                class="hidden"
+              />
+              <label for="rock" class="hover:cursor-pointer">
+                <div
+                  class="w-[200px] h-[200px] bg-white rounded-md mb-2 flex items-center justify-center"
+                >
+                  <i class="fas fa-hand-rock text-purple-600 text-8xl"></i>
+                </div>
+                <p class="uppercase text-2xl">Rock</p>
+              </label>
+            </div>
+
+            <div class="bg-purple-600 p-3 rounded-md input-checked-parent">
+              <input
+                type="radio"
+                name="player-game-option"
+                id="paper"
+                class="hidden"
+              />
+              <label for="paper" class="hover:cursor-pointer">
+                <div
+                  class="w-[200px] h-[200px] bg-white rounded-md mb-2 flex items-center justify-center"
+                >
+                  <i class="fas fa-hand-paper text-purple-600 text-8xl"></i>
+                </div>
+                <p class="uppercase text-2xl">Paper</p>
+              </label>
+            </div>
+
+            <div class="bg-purple-600 p-3 rounded-md input-checked-parent">
+              <input
+                type="radio"
+                name="player-game-option"
+                id="scissors"
+                class="hidden"
+              />
+              <label for="scissors" class="hover:cursor-pointer">
+                <div
+                  class="w-[200px] h-[200px] bg-white rounded-md mb-2 flex items-center justify-center"
+                >
+                  <i class="fas fa-hand-scissors text-purple-600 text-8xl"></i>
+                </div>
+                <p class="uppercase text-2xl">Scissors</p>
+              </label>
+            </div>
+          </div>
+          <button
+            class="my-8 font-semibold rounded-lg text-xl bg-purple-600 py-2 px-8"
+          >
+            Select
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

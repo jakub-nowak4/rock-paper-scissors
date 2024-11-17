@@ -57,4 +57,28 @@ function playGame(rounds) {
   }
 }
 
-playGame(5);
+// playGame(5);
+
+const inputs = document.querySelectorAll(`input[type="radio"]`);
+
+inputs.forEach((input) =>
+  input.addEventListener("input", (e) => {
+    inputs.forEach((input) => {
+      const parentEl = input.closest(".input-checked-parent");
+      if (input.checked) {
+        parentEl.classList.remove("bg-purple-600");
+        parentEl.classList.add("bg-teal-200");
+      } else {
+        parentEl.classList.remove("bg-teal-200");
+        parentEl.classList.add("bg-purple-600");
+      }
+    });
+  })
+);
+
+const playerSelectValueForm = document.querySelector("#player-select-form");
+
+playerSelectValueForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("test");
+});
